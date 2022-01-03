@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Logup from './components/Logup'
+import Login from './components/Login';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       Welcome to fitness app
       <Logup />
+      <Login />
  
     </div>
   );

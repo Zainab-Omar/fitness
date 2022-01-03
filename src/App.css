@@ -37,7 +37,7 @@
   }
 } */
 
-.logup-form {
+.logup-form, .login-form {
   border: 1px solid rgb(128, 128, 128);
   text-align:left; 
   width: 500px;
