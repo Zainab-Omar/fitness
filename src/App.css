@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.logup-form {
+  border: 1px solid rgb(128, 128, 128);
+  text-align:left; 
+  width: 500px;
+  padding: 50px;
+  margin-top: 100px;
+  margin-right: 500px;
+  margin-left: 500px;
+  margin-bottom: 100px;  
 }
