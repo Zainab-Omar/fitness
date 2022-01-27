@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Logup from './components/Logup'
 import Login from './components/Login';
 import Logout from './components/Logout';
+import NavBar from './components/NavBar';
 
 function App() {
 
