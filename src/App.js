@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       Welcome to fitness app
       <Logup />
-      <Login />
+      {/* <Login /> */}
  
     </div>
   );
