@@ -8,7 +8,9 @@ export function ExerciseDBAPI(query="cardio"){
             }
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => dispatch({
+            type: 'EXERCISES', data
+        }))
         .catch(error => console.log(error))
     }
 }
