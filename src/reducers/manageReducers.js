@@ -11,6 +11,9 @@ function userReducer(state = [], action){
         case 'LOGIN_USER':
           return {...state, currentUser: action.userObj}
 
+          case 'LOGOUT_USER': 
+           return {...state, currentUser: {}}
+
           case 'ERROR_MESSAGE':
             return {...state, error: action.error}
 
