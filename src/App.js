@@ -5,9 +5,10 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar';
+// import { connect } from 'react-redux'
+
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
