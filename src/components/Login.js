@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { FormControl, FormGroup } from 'react-bootstrap';
-function Login() {
+import { login } from '../actions/login'
+import { connect } from 'react-redux'
+
+
+function Login({login}) {
     const [state, setState] = useState({
         email: "",
         password: "",
@@ -15,7 +19,7 @@ function Login() {
    const handleSubmit = e => {
     e.preventDefault()
     console.log(state)
-    console.log("submitted")
+    login(state)
    }
 
     return (
@@ -38,4 +42,8 @@ function Login() {
     )
 }
 
-export default Login
+const mapDispatchToProps = dispatch => ({
+    login: userInfo => dispatch(login(userInfo))
+})
+
+export default connect(null, mapDispatchToProps)(Login);

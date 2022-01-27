@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       Welcome to fitness app
-      <Logup />
-      {/* <Login /> */}
+      {/* <Logup /> */}
+      <Login />
  
     </div>
   );
