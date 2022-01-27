@@ -1,6 +1,7 @@
 import React , { useState } from "react";
 import { FormControl, FormGroup } from 'react-bootstrap';
-
+import { connect } from 'react-redux';
+import { logup } from '../actions/logup'
 
 function Logup(){
     const [state, setState] = useState({
@@ -19,7 +20,7 @@ function Logup(){
     const handleSubmit = e => {
         e.preventDefault()
         console.log(state)
-        console.log("submitted")
+        this.props.logup(state)
     }
   
 
@@ -54,4 +55,8 @@ function Logup(){
 
 }
 
-export default Logup;
+const mapDispatchToProps = dispatch => ({
+    logup: userInfo => dispatch(logup(userInfo))
+})
+
+export default connect (null, mapDispatchToProps)(Logup);
