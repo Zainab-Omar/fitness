@@ -1,4 +1,4 @@
-export const logup = userInfo => {
+export const logup = user => {
     return dispatch => {
         return fetch("http://localhost:3000/api/v1/users", {
             method: "POST",
@@ -6,7 +6,7 @@ export const logup = userInfo => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({userInfo})
+            body: JSON.stringify({user})
         })
         .then(res => res.json())
         .then(data => {

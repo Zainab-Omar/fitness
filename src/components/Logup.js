@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logup } from '../actions/logup'
 
-function Logup(){
+function Logup({logup}){
     const [state, setState] = useState({
         user_name: "",
         email: "",
@@ -20,7 +20,7 @@ function Logup(){
     const handleSubmit = e => {
         e.preventDefault()
         console.log(state)
-        this.props.logup(state)
+        logup(state)
     }
   
 
