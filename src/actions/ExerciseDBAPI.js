@@ -1,4 +1,4 @@
-export function ExerciseDBAPI(query="cardio"){
+export function exerciseDBAPI(query="cardio"){
     return dispatch => {
         fetch( `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${query}`, {
 	        "method": "GET",

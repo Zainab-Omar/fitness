@@ -15,7 +15,7 @@ const NavBar = ({users}) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-            {/* <Nav.Link href="/fitness">Fitness</Nav.Link> */}
+            <Nav.Link href="/exercises">Exercises</Nav.Link>
           
             </Nav>
             <Nav>
@@ -39,7 +39,7 @@ const NavBar = ({users}) => {
            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
            <Navbar.Collapse id="responsive-navbar-nav">
            <Nav className="me-auto">
-           {/* <Nav.Link href="/fitness">Fitness</Nav.Link> */}
+           <Nav.Link href="/exercises">Exercises</Nav.Link>
          
            </Nav>
            <Nav>

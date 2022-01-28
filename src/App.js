@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar';
+import ExercisesContainer from './containers/ExercisesContainer';
 // import { connect } from 'react-redux'
 
 
@@ -15,6 +16,7 @@ function App() {
     <NavBar />
     <Routes>
         {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/exercises" element={<ExercisesContainer />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logup" element={<Logup />} />
         <Route path="/logout" element={<Logout />} />
