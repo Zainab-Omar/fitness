@@ -2,14 +2,17 @@ import React , { useState } from "react";
 import { FormControl, FormGroup } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logup } from '../actions/logup'
+import { Link, useNavigate } from 'react-router-dom'
 
-function Logup({logup}){
+function Logup({logup, users}){
     const [state, setState] = useState({
         user_name: "",
         email: "",
         password: "",
         password_confirmation:""
     })
+
+    const navigate = useNavigate()
 
     const handleChange = e => {
         setState({...state,
@@ -19,7 +22,6 @@ function Logup({logup}){
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(state)
         logup(state)
     }
   
@@ -27,6 +29,7 @@ function Logup({logup}){
     return(
         <div className="logup-form">
             <h1>Log Up</h1>
+            {localStorage.token === undefined? <p>{users.error}</p>: navigate('/exercises')}
             <form onSubmit={handleSubmit}>
                 <FormGroup>
 
@@ -45,6 +48,10 @@ function Logup({logup}){
                 <button className="btn btn-primary" type="submit">Log Up</button>
 
                 </FormGroup>
+
+                <Link to="/login">
+                    <p>Have an account Login</p>
+                </Link>
             </form> 
           
         </div>
@@ -55,8 +62,14 @@ function Logup({logup}){
 
 }
 
+const mapStateToProps = state => {
+    return {
+        users: state.users
+    }
+}
+
 const mapDispatchToProps = dispatch => ({
     logup: userInfo => dispatch(logup(userInfo))
 })
 
-export default connect (null, mapDispatchToProps)(Logup);
+export default connect (mapStateToProps, mapDispatchToProps)(Logup);
