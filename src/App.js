@@ -1,16 +1,22 @@
 import './App.css';
+import React, { useEffect }from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Logup from './components/Logup'
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Profile from './components/Profile';
+import { profile } from './actions/profile'
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import ExercisesContainer from './containers/ExercisesContainer';
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 
+function App({profile}) {
 
-function App() {
+  useEffect(() => {
+    profile()
+  }, [])
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,4 +34,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  profile: () => dispatch(profile())
+})
+
+export default connect(null, mapDispatchToProps)(App);
