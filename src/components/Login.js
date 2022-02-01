@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { FormControl, FormGroup } from 'react-bootstrap';
 import { login } from '../actions/login'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Login({login, users}) {
     const [state, setState] = useState({
         email: "",
         password: "",
     })
+
+    const navigate = useNavigate();
 
     const handleChange = e => {
         setState({...state,
@@ -26,7 +28,7 @@ function Login({login, users}) {
         <div className="login-form">
             <h1>Log In!</h1>
             { /* check if user token is undefined return the login form else return errors  */}
-            { localStorage.token === undefined ? <p>{users.error}</p> : null }
+            { localStorage.token === undefined ? <p>{users.error}</p> : navigate('/exercises') }
             <form onSubmit={handleSubmit}>
                 <FormGroup>
 
