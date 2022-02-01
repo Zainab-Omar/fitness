@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { FormControl, FormGroup } from 'react-bootstrap';
 import { login } from '../actions/login'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-
-function Login({login}) {
+function Login({login, users}) {
     const [state, setState] = useState({
         email: "",
         password: "",
@@ -18,13 +18,15 @@ function Login({login}) {
 
    const handleSubmit = e => {
     e.preventDefault()
-    console.log(state)
     login(state)
+    setState({email: "", password:""})
    }
 
     return (
         <div className="login-form">
             <h1>Log In!</h1>
+            { /* check if user token is undefined return the login form else return errors  */}
+            { localStorage.token === undefined ? <p>{users.error}</p> : null }
             <form onSubmit={handleSubmit}>
                 <FormGroup>
 
@@ -37,13 +39,22 @@ function Login({login}) {
                 <button className="btn btn-primary" type="submit">Log In</button>
 
                 </FormGroup>
+                <Link to="/logup">
+                    <p>Create an account</p>
+                </Link>
             </form> 
         </div>
     )
+}
+
+const mapStateToProps = state => {
+    return {
+        users: state.users
+    }
 }
 
 const mapDispatchToProps = dispatch => ({
     login: userInfo => dispatch(login(userInfo))
 })
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
