@@ -19,7 +19,7 @@ const NavBar = ({users}) => {
           
             </Nav>
             <Nav>
-            {/* <Nav.Link href="/profile">Profile</Nav.Link> */}
+            <Nav.Link href="/profile">Profile</Nav.Link>
             <Logout/>
             </Nav>
         </Navbar.Collapse>
