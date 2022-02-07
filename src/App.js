@@ -10,6 +10,7 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import ExercisesContainer from './containers/ExercisesContainer';
 import { connect } from 'react-redux'
+import FindBMI from './components/FindBMI';
 
 function App({profile}) {
 
@@ -30,6 +31,7 @@ function App({profile}) {
         <Route path="/profile" element={<Profile />} />
     </Routes>
     </BrowserRouter>
+    <FindBMI />
     </div>
   );
 }
