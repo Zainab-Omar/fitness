@@ -19,7 +19,7 @@ const NavBar = ({users}) => {
           
             </Nav>
             <Nav>
-            <Nav.Link href="/profile">Profile</Nav.Link>
+            <Nav.Link href="/profile">Welcome {users.data.attributes.user_name}</Nav.Link>
             <Logout/>
             </Nav>
         </Navbar.Collapse>
