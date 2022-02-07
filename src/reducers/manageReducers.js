@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
     users: userReducer,
-    exercises: exerciseReducer 
+    exercises: exerciseReducer,
+    bmi: bmiReducer,
 })
 
 export default rootReducer;
@@ -29,6 +30,14 @@ function exerciseReducer(state = [], action){
             return action.data
             default:
                 return state
+    }
+}
+
+function bmiReducer(state=[], action){
+    switch(action.type){
+        case 'BMI':
+            return action.data
+            default: return state
     }
 }
 

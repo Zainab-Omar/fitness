@@ -8,7 +8,9 @@ export function calBMI(weight, height){
 	}
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => dispatch({
+    type: 'BMI', data
+}))
 .catch(err => {
 	console.error(err);
 });
