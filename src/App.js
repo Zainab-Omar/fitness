@@ -11,6 +11,7 @@ import NavBar from './components/NavBar';
 import ExercisesContainer from './containers/ExercisesContainer';
 import { connect } from 'react-redux'
 import FindBMI from './components/FindBMI';
+import ShowBMI from './components/ShowBMI';
 
 function App({profile}) {
 
@@ -32,6 +33,7 @@ function App({profile}) {
     </Routes>
     </BrowserRouter>
     <FindBMI />
+    <ShowBMI/>
     </div>
   );
 }
