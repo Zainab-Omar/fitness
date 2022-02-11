@@ -9,23 +9,24 @@ function Profile({users}) {
     if(localStorage.token !== undefined){
         if(users !== undefined){
             return(
-                <React.Fragment>
+                <div className="profile">
                     <h1>Welcome {users.data.attributes.user_name}</h1>
 
-                    <figure>
+                
+                    <div className="profile-pic">
                         <img src="/images/workout.jpg" alt="workout" height={250} width={300}/>
-                        <figcaption>My Exercises</figcaption>
-                    </figure>
-                    <figure>
+                        <p>My Exercises</p>
+                    </div>
+
+                    <div className="profile-pic">
                         <img src="/images/bmi.jpeg" alt="body mass index"height={250} width={300}/>
-                        <figcaption>Calculate your BMI</figcaption>
-                    </figure>
-                    <figure>
+                        <p>Calculate your BMI</p>
+                    </div>
+                    <div className="profile-pic">
                         <img src="/images/health-food.jpeg" alt="health food" height={250} width={300}/>
-                        <figcaption>Find Healthy Recipes</figcaption>
-                    </figure>      
-                    
-                </React.Fragment>
+                        <p>Find Healthy Recipes</p>
+                    </div>     
+                </div> 
             )
         }
         else return null    
