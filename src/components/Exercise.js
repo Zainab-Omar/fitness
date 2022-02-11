@@ -3,8 +3,8 @@ import { Card, Button } from 'react-bootstrap'
 
 const Exercise =({exercise}) => {
     return(
-        <div>
-            <Card style={{ width: '18rem' }}>
+        <div className='exercise'>
+            <Card>
                 <Card.Img variant="top" src={exercise.gifUrl} />
                 <Card.Body>
                     <Card.Title>{exercise.name}</Card.Title>

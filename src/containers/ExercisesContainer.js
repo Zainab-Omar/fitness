@@ -7,13 +7,10 @@ function ExercisesContainer({exercises, exerciseDBAPI}){
 
     useEffect(() => {
         exerciseDBAPI()
-        console.log(exercises)
     },[])
 
     return(
         <div>
-            Hello
-            <h1>fetch data</h1>
             <Exercises execises={exercises} />
         </div>
     )
