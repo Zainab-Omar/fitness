@@ -1,7 +1,9 @@
 import React from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import SaveExercise from './SaveExercise'
 
-const Exercise =({exercise}) => {
+const Exercise =({exercise, users}) => {
     return(
         <div className='exercise'>
             <Card>
@@ -13,11 +15,17 @@ const Exercise =({exercise}) => {
                     <p>Equipment: {exercise.equipment}</p>
                     <p>Target: {exercise.target}</p>
                     </Card.Text>
-                    <Button variant="primary">Add</Button>
+                    {localStorage.token !== undefined ?<SaveExercise exercise={exercise} id={users} /> : null}
                 </Card.Body>
             </Card>
         </div>
     )
 }
 
-export default Exercise;
+const mapStateToProps = state => {
+    return {
+        users: state.users.currentUser,
+    }
+}
+
+export default connect(mapStateToProps)(Exercise);
